@@ -220,6 +220,86 @@ body {
     margin-top: 5px;
 }
 
+#sobre-mim {
+    padding: 50px 0;
+    background: #1f1f1f;
+    color: #fff;
+}
+
+#sobre-mim h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ff4b2b; /* Cor de destaque */
+}
+
+.sobre-mim-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sobre-mim-imagem {
+    flex: 1;
+}
+
+.sobre-mim-imagem img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.sobre-mim-texto {
+    flex: 2;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.sobre-mim-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.sobre-mim-links a {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.sobre-mim-links a i {
+    margin-right: 10px;
+    font-size: 2rem;
+    transition: transform 0.3s;
+}
+
+.sobre-mim-links a:hover {
+    color: #ff4b2b; /* Efeito de hover */
+}
+
+.sobre-mim-links a:hover i {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .sobre-mim-container {
+        flex-direction: column;
+    }
+
+    .sobre-mim-imagem {
+        margin-bottom: 20px;
+    }
+}
+
 
 /* Formulário de contato */
 #formulario-contato {
