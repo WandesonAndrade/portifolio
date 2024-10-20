@@ -155,7 +155,71 @@ body {
     color: #070707;
   }
 
-  
+  #habilidades {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+#habilidades h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.habilidades-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.habilidade-card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    width: 220px;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.5s;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.habilidade-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.icon-container {
+    margin-bottom: 15px;
+}
+
+.icon-container img {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+.habilidade-card i {
+    font-size: 3rem; /* Aumenta o tamanho do ícone */
+    margin-bottom: 10px;
+    color: #f06529; /* Cor ajustada para os ícones */
+    
+}
+.habilidade-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.habilidade-card p {
+    font-size: 1rem;
+    color: #ddd;
+    margin-top: 5px;
+}
+
 
 /* Formulário de contato */
 #formulario-contato {
