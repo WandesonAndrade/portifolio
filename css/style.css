@@ -6,10 +6,36 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    --color: rgba(0, 115, 19, 0.3);
+    background-color: #191a1a;
+    background-image: linear-gradient(
+        180deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        45deg,
+        transparent 24%,
+        var(--color) 35%,
+        var(--color) 26%,
+        transparent 17%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      );
+    background-size: 55px 55px;
+  
 }
 
 /* Layout e espaçamento */
@@ -20,11 +46,11 @@ body {
 }
 
 section {
-    margin: 80px 0;
+    margin-bottom: 100px; /* Adiciona espaçamento entre seções */
 }
 
 /* Tipografia */
-h1, h2, h3 {
+h1, h3 {
     font-weight: 300;
     margin-bottom: 30px;
 }
@@ -34,7 +60,14 @@ h1 {
 }
 
 h2 {
+    font-family: 'Roboto', sans-serif;
     font-size: 2.5rem;
+    color: #ff4b2b; /* Cor de destaque */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
 p {
@@ -42,15 +75,7 @@ p {
     font-size: 1.1rem;
 }
 
-/* Header e navegação */
-.header {
-    padding: 20px;
-    text-align: center;
-    background: linear-gradient(135deg, #007BFF, #0056b3);
-    color: #fff;
-    border-bottom: 3px solid #007BFF;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+/* navegação */
 
 nav ul {
     display: flex;
@@ -106,65 +131,243 @@ body {
     padding-top: 80px;
 }
 
-/* Seções específicas */
+/* CSS HOME */
+/* Estilização geral da seção Home */
 #home {
-    text-align: center;
-    padding: 100px 0;
+    background-color: rgba(255, 255, 255, 0.466); /* Fundo transparente */
+    padding: 50px 0; /* Espaçamento superior e inferior */
+    text-align: center; /* Alinhamento central do conteúdo */
+    border-radius: 15px; /* Cantos arredondados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
+    margin: 30px auto; /* Centraliza o elemento */
+    max-width: 1300px; /* Limita a largura total */
 }
 
-/* From Uiverse.io by codebykay101 */ 
-.container {
-    position: relative;
-    display: flex;
-    justify-content: center;
+#home:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+}
+   
+#home:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+.home-content {
+    display: flex; /* Divide o conteúdo em duas colunas */
+    justify-content: space-between;
     align-items: center;
-  }
-  
-  .container .glass {
-    position: relative;
-    width: 180px;
-    height: 200px;
-    background: linear-gradient(#fff2, transparent);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    border-radius: 10px;
-    margin: 0 -45px;
-    backdrop-filter: blur(10px);
-    transform: rotate(calc(var(--r) * 1deg));
-  }
-  
-  .container:hover .glass {
-    transform: rotate(0deg);
-    margin: 0 10px;
-  }
-  
-  .container .glass::before {
-    content: attr(data-text);
-    position: absolute;
-    bottom: 0;
+    max-width: 1200px; /* Limita a largura total */
     width: 100%;
-    height: 40px;
-    background: rgba(175, 41, 41, 0.05);
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+/* Coluna de texto à esquerda */
+.text-column {
+    flex: 1; /* Faz a coluna ocupar espaço proporcional */
+    padding-right: 20px;
+}
+
+.text-column h1 {
+    font-size: 3em; /* Tamanho do título */
+    color: #ff4b2b; /* Cor escura */
+    margin-bottom: 20px;
+    text-align: center; /* Centraliza o título */
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
+    text-transform: uppercase; /* Letras maiúsculas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    transition: color 0.3s ease; /* Transição suave */
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+
+.text-column p {
+    font-size: 1.2em; /* Tamanho do texto */
+    color: #555; /* Cor do texto */
+    margin-bottom: 40px; /* Espaço abaixo do parágrafo */
+    line-height: 1.6; /* Espaçamento entre linhas */
+    text-align: justify; /* Texto justificado */
+    font-family: 'Roboto', sans-serif; /* Fonte limpa e moderna */
+}
+
+
+/* Estilização dos botões de LinkedIn e GitHub */
+.buttons {
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.linkedin {
+    background-color: #0077b5; /* Cor do LinkedIn */
+}
+
+.github {
+    background-color: #333; /* Cor do GitHub */
+}
+
+.linkedin:hover {
+    background-color: #005582; /* Tom mais escuro no hover */
+}
+
+.github:hover {
+    background-color: #1b1b1b; /* Tom mais escuro no hover */
+}
+
+/* Coluna de imagem à direita */
+.image-column {
+    flex: 1; /* Faz a coluna ocupar o restante do espaço */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #070707;
-  }
+}
+
+.profile-img {
+    width: 300px; /* Define a largura da imagem */
+    height: auto; /* Mantém a proporção */
+    border-radius: 50%; /* Deixa a imagem circular */
+    object-fit: cover; /* Garante que a imagem se ajuste */
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column; /* Empilha as colunas verticalmente */
+        text-align: center;
+    }
+
+    .text-column {
+        padding-right: 0;
+        margin-bottom: 40px; /* Espaçamento entre o texto e a imagem */
+    }
+
+    .profile-img {
+        width: 200px; /* Reduz o tamanho da imagem em telas pequenas */
+    }
+}
+
+
+/* CSS PROJETOS */ 
+/* Estilização da seção de projetos, com fundo claro e padding para espaçamento */
+#projetos {
+    background-color: rgba(255, 255, 255, 0.466); /* Fundo transparente */
+    padding: 50px 0; /* Espaçamento superior e inferior */
+    text-align: center; /* Alinhamento central do conteúdo */
+    border-radius: 15px; /* Cantos arredondados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
+    margin: 30px auto; /* Centraliza o elemento */
+    max-width: 1300px; /* Limita a largura total */
+}
+
+#projetos:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+}
+   
+#projetos:hover {
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+}
+
+
+/* Estilização do container que contém os cards de projetos */
+.container {
+    display: flex; /* Layout flexível para alinhar os cards */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaçamento entre os cards */
+    flex-wrap: wrap; /* Permite que os cards se ajustem em múltiplas linhas, caso necessário */
+}
+
+/* Estilização básica dos cards de projetos */
+.glass {
+    position: relative; /* Para permitir o posicionamento de elementos dentro do card */
+    width: 180px; /* Largura do card */
+    height: 220px; /* Altura do card */
+    background: linear-gradient(135deg, #ffffff11, #ffffff44); /* Fundo com leve efeito de gradiente */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda transparente */
+    box-shadow: 0 25px 25px rgba(0, 0, 0, 0.15); /* Sombra leve para profundidade */
+    display: flex; /* Centraliza o conteúdo dentro do card */
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s; /* Transição suave para efeitos de hover */
+    border-radius: 10px; /* Bordas arredondadas */
+    margin: 0 -45px; /* Margem negativa para espaçamento inicial entre os cards */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo do card */
+    transform: rotate(calc(var(--r) * 1deg)); /* Gira os cards com base na variável CSS */
+    padding: 20px; /* Espaçamento interno no card */
+    cursor: pointer; /* Muda o cursor para indicar que é interativo */
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.glass:hover {
+    transform: rotate(0deg); /* Remove a rotação do card ao passar o mouse */
+    margin: 0 90px; /* Ajusta o espaçamento entre os cards */
+}
+
+/* Texto exibido no rodapé dos cards (nome do projeto) */
+.glass::before {
+    content: attr(data-text); /* Insere o nome do projeto a partir do atributo data-text */
+    position: absolute; /* Posicionamento absoluto no rodapé do card */
+    bottom: 0; /* Fixa na parte inferior */
+    width: 100%; /* Ocupa toda a largura do card */
+    height: 40px; /* Altura da área do texto */
+    background: rgba(255, 255, 255, 0.05); /* Fundo translúcido */
+    display: flex; /* Centraliza o texto */
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor branca para o texto */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 1.2em; /* Tamanho maior do texto */
+}
+
+/* Parágrafo de descrição dentro dos cards */
+.glass p {
+    color: #fff; /* Texto branco */
+    font-size: 0.9em; /* Tamanho pequeno do texto */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+/* Botão interativo dentro dos cards */
+.glass button {
+    position: absolute; /* Posicionamento absoluto dentro do card */
+    bottom: 10px; /* Fixa o botão na parte inferior */
+    padding: 10px 20px; /* Tamanho interno do botão */
+    background-color: #ff6b6b; /* Cor de fundo vermelha */
+    color: white; /* Texto branco no botão */
+    border: none; /* Remove bordas padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para indicar interatividade */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+/* Efeito hover no botão */
+.glass button:hover {
+    background-color: #ff3b3b; /* Escurece o vermelho ao passar o mouse */
+}
+
+  
+  /*Habilidades*/
 
   #habilidades {
-    padding: 50px 0;
-    text-align: center;
-    background-color: #f0f0f0;
+    background-color: rgba(255, 255, 255, 0.466); /* Fundo transparente */
+    padding: 50px 20px; /* Espaçamento superior e inferior */
+    text-align: center; /* Alinhamento central do conteúdo */
+    border-radius: 15px; /* Cantos arredondados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
+    margin: 50px auto; /* Centraliza o elemento */
+    max-width: 1300px; /* Limita a largura total */
 }
 
-#habilidades h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #333;
+#habilidades:hover {
+    transform: translateY(-10px); /* Efeito de flutuação */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra ao flutuar */
 }
 
 .habilidades-container {
@@ -221,16 +424,18 @@ body {
 }
 
 #sobre-mim {
-    padding: 50px 0;
-    background: #1f1f1f;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0.466); /* Fundo transparente */
+    padding: 50px 20px; /* Espaçamento superior e inferior */
+    text-align: center; /* Alinhamento central do conteúdo */
+    border-radius: 15px; /* Cantos arredondados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
+    margin: 50px auto; /* Centraliza o elemento */
+    max-width: 1300px; /* Limita a largura total */
 }
 
-#sobre-mim h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-    color: #ff4b2b; /* Cor de destaque */
+#sobre-mim:hover {
+    transform: translateY(-10px); /* Efeito de flutuação */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra ao flutuar */
 }
 
 .sobre-mim-container {
@@ -302,43 +507,82 @@ body {
 
 
 /* Formulário de contato */
-#formulario-contato {
-    max-width: 600px;
-    margin: 0 auto;
+#contato {
+    background-color: rgba(255, 255, 255, 0.466); /* Fundo transparente */
+    padding: 50px 20px; /* Espaçamento superior e inferior */
+    text-align: center; /* Alinhamento central do conteúdo */
+    border-radius: 15px; /* Cantos arredondados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
+    margin: 50px auto; /* Centraliza o elemento */
+    max-width: 1300px; /* Limita a largura total */
 }
 
-#formulario-contato input,
-#formulario-contato textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+#contato:hover {
+    transform: translateY(-10px); /* Efeito de flutuação */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra ao flutuar */
 }
 
-#formulario-contato input:focus,
-#formulario-contato textarea:focus {
-    border-color: #007BFF;
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+#contato p {
+    font-size: 1.2rem;
+    color: #666;
 }
 
-#formulario-contato button {
-    background-color: #0077b6;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: block; /* Para centralizar no formulário */
-    margin: 0 auto; /* Centraliza o botão */
+.contato-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-#formulario-contato button:hover {
-    background-color: #023e8a;
-    transform: scale(1.05);
+.contato-links {
+    list-style: none;
+    padding: 0;
+}
+
+.contato-links li {
+    margin: 10px 0;
+}
+
+.contato-links a {
+    font-size: 1.5rem;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contato-links a:hover {
+    color: #ff6600;
+}
+
+.contato-links i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
+
+/* Animação ao passar o mouse */
+.contato-links a:hover i {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone */
+    color: #ff6600; /* Altera a cor do ícone ao passar o mouse */
+}
+
+/* Animação contínua (pulse) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.contato-links a:hover i {
+    animation: pulse 0.6s infinite; /* Aplica o efeito de pulsação ao ícone */
 }
 
 /* Footer */
@@ -348,3 +592,4 @@ footer {
     padding: 20px 0;
     margin-top: 80px;
 }
+
