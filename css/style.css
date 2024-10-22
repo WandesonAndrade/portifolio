@@ -4,10 +4,113 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Estilo geral */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Menu fixo no topo */
+#menu-fixo {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: rgba(51, 51, 51, 0.7); /* Fundo transparente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    transition: padding 0.3s ease; /* Animação suave */
+}
+
+/* Container do menu */
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+/* Título do logo em formato de tag HTML */
+.menu-container h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8em;
+    color: #ff4500;
+    transition: font-size 0.3s ease; /* Animação suave na mudança de tamanho */
+}
+
+/* Links do menu */
+.menu {
+    display: flex; /* Mudar para flex para que fique visível em telas maiores */
+    flex-direction: row; /* Itens em linha */
+    list-style-type: none; /* Remove os marcadores da lista */
+    margin: 0; /* Remove margens */
+    padding: 0; /* Remove preenchimento */
+}
+
+.menu.open {
+    right: 0; /* Aparece na tela */
+    display: flex; /* Muda o display quando aberto */
+}
+
+.menu li {
+    margin: 0 15px; /* Espaçamento entre os itens */
+ 
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Centraliza o ícone com o texto */
+}
+
+.menu a:hover {
+    color: #f39c12;
+}
+
+/* Botão de menu sanduíche */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .menu {
+        right: -100%; /* Fora da tela por padrão */
+        height: 100vh; /* Ocupa toda a altura da tela */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu.open {
+        right: 0; /* Aparece na tela */
+    }
+
+    .menu-toggle {
+        display: block; /* Botão aparece em telas pequenas */
+    }
+
+    .menu li {
+        margin: 15px 0;
+    }
+}
+
+/* Estilo para quando a página é rolada */
+body.scrolled #menu-fixo {
+    padding: 10px; /* Diminui o padding ao dar scroll */
+}
+
+body.scrolled .menu-container h2 {
+    font-size: 1.2em; /* Diminui a fonte do h2 */
+}
+
 
 body {
-    width: 100%;
-    height: 100%;
     --color: rgba(0, 115, 19, 0.3);
     background-color: #191a1a;
     background-image: linear-gradient(
@@ -45,10 +148,6 @@ body {
     padding: 0 20px;
 }
 
-section {
-    margin-bottom: 100px; /* Adiciona espaçamento entre seções */
-}
-
 /* Tipografia */
 h1, h3 {
     font-weight: 300;
@@ -75,61 +174,6 @@ p {
     font-size: 1.1rem;
 }
 
-/* navegação */
-
-nav ul {
-    display: flex;
-    justify-content: flex-end;
-    list-style-type: none;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #00BFFF;
-}
-
-.logo img {
-    height: 50px;
-    width: auto;
-}
-
-/* Menu Fixo */
-#menu-fixo {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgba(68, 68, 68, 1);
-    z-index: 1000;
-    transition: background-color 0.3s ease;
-}
-
-.menu-transparente {
-    background-color: rgba(68, 68, 68, 0.7);
-}
-
-.menu-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Adiciona espaço no topo do corpo para não cobrir conteúdo */
-body {
-    padding-top: 80px;
-}
 
 /* CSS HOME */
 /* Estilização geral da seção Home */
@@ -586,10 +630,82 @@ body {
 }
 
 /* Footer */
+/* Footer Geral */
 footer {
-    background-color: #f8f9fa;
+    background-color: #333; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    padding: 50px 0; /* Espaçamento superior e inferior */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #f8c71a; /* Destaque para seu nome */
+}
+
+.footer-info p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    color: #ccc; /* Cor clara para o texto descritivo */
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #fff; /* Links em branco */
+    text-decoration: none;
+    font-size: 1em;
+    margin-right: 15px;
+    font-family: 'Roboto', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f8c71a; /* Cor amarela ao passar o mouse */
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #f8c71a; /* Cor amarela ao passar o mouse nos ícones */
+}
+
+.footer-bottom {
     text-align: center;
     padding: 20px 0;
-    margin-top: 80px;
+    background-color: #222; /* Fundo um pouco mais escuro para separar do conteúdo */
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+    color: #bbb; /* Texto mais claro */
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links a {
+        display: block;
+        margin-bottom: 10px;
+    }
 }
 
