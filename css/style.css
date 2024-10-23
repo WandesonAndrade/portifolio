@@ -10,16 +10,20 @@ body {
     font-family: Arial, sans-serif;
 }
 
+header {
+    padding-top: 50px; /* Ajuste conforme a altura do menu */
+}
 /* Menu fixo no topo */
 #menu-fixo {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 999;
-    background-color: rgba(51, 51, 51, 0.7); /* Fundo transparente */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: transparent; /* Deixa o menu transparente */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     padding: 15px 0;
     transition: padding 0.3s ease; /* Animação suave */
+    align-items: center; /* Alinha com os ícones */
 }
 
 /* Container do menu */
@@ -31,13 +35,20 @@ body {
 }
 
 /* Título do logo em formato de tag HTML */
-.menu-container h2 {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.8em;
-    color: #ff4500;
-    transition: font-size 0.3s ease; /* Animação suave na mudança de tamanho */
-}
 
+.logo h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    color: #ff4500;
+    margin: 0; /* Remove espaçamento padrão */
+    display: flex;
+    align-items: center; /* Alinha com os ícones */
+    transition: font-size 0.2s ease; /* Animação suave na mudança de tamanho */
+}
+/* Estilo quando a página é rolada */
+.menu-container h2.small {
+    font-size: 1.2em; /* Tamanho menor quando rolar a página */
+}
 /* Links do menu */
 .menu {
     display: flex; /* Mudar para flex para que fique visível em telas maiores */
@@ -52,8 +63,8 @@ body {
     display: flex; /* Muda o display quando aberto */
 }
 
-.menu li {
-    margin: 0 15px; /* Espaçamento entre os itens */
+.menu i {
+    margin: 0 10px; /* Espaçamento entre os itens */
  
 }
 
@@ -62,6 +73,7 @@ body {
     text-decoration: none;
     display: flex;
     align-items: center; /* Centraliza o ícone com o texto */
+    margin: 0 10px; /* Espaçamento entre os itens */
 }
 
 .menu a:hover {
@@ -81,10 +93,17 @@ body {
 /* Responsividade para telas pequenas */
 @media (max-width: 768px) {
     .menu {
+        display: none; /* Começa escondido em telas pequenas */
+        flex-direction: column; /* Itens em coluna */
+        position: absolute;
+        top: 60px;
         right: -100%; /* Fora da tela por padrão */
-        height: 100vh; /* Ocupa toda a altura da tela */
+        background-color: rgba(51, 51, 51, 0.555); /* Fundo transparente */
+        width: 100%;
+        height: 100vh;
         justify-content: center;
         align-items: center;
+        transition: right 0.3s ease; /* Animação */
     }
 
     .menu.open {
@@ -313,13 +332,9 @@ p {
 #projetos:hover {
     transform: scale(0.98);
     border-radius: 20px;
-}
-   
-#projetos:hover {
     box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
 }
-
-
+   
 /* Estilização do container que contém os cards de projetos */
 .container {
     display: flex; /* Layout flexível para alinhar os cards */
@@ -401,17 +416,18 @@ p {
 
   #habilidades {
     background-color: rgba(255, 255, 255, 0.466); /* Fundo transparente */
-    padding: 50px 20px; /* Espaçamento superior e inferior */
+    padding: 50px 0; /* Espaçamento superior e inferior */
     text-align: center; /* Alinhamento central do conteúdo */
     border-radius: 15px; /* Cantos arredondados */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
-    margin: 50px auto; /* Centraliza o elemento */
+    margin: 30px auto; /* Centraliza o elemento */
     max-width: 1300px; /* Limita a largura total */
 }
 
 #habilidades:hover {
-    transform: translateY(-10px); /* Efeito de flutuação */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra ao flutuar */
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+    transform: scale(0.98);
+    border-radius: 20px;
 }
 
 .habilidades-container {
@@ -473,13 +489,14 @@ p {
     text-align: center; /* Alinhamento central do conteúdo */
     border-radius: 15px; /* Cantos arredondados */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
-    margin: 50px auto; /* Centraliza o elemento */
+    margin: 30px auto; /* Centraliza o elemento */
     max-width: 1300px; /* Limita a largura total */
 }
 
 #sobre-mim:hover {
-    transform: translateY(-10px); /* Efeito de flutuação */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra ao flutuar */
+    box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+    transform: scale(0.98);
+    border-radius: 20px;
 }
 
 .sobre-mim-container {
@@ -557,13 +574,14 @@ p {
     text-align: center; /* Alinhamento central do conteúdo */
     border-radius: 15px; /* Cantos arredondados */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suavização da animação */
-    margin: 50px auto; /* Centraliza o elemento */
+    margin: 30px auto; /* Centraliza o elemento */
     max-width: 1300px; /* Limita a largura total */
 }
 
 #contato:hover {
-    transform: translateY(-10px); /* Efeito de flutuação */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra ao flutuar */
+      box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
+    transform: scale(0.98);
+    border-radius: 20px;
 }
 
 #contato p {
